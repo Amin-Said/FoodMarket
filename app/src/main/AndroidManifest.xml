@@ -13,7 +13,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.product_details.ProductDetailsActivity" android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ui.product_listing.ProductListingActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.product_listing.ProductListingActivity" android:theme="@style/TranslucentStatusBar"/>
         <activity android:name=".ui.intro.IntroSliderActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity

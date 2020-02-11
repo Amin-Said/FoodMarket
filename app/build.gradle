@@ -49,6 +49,7 @@ dependencies {
     // for splash loading view
     implementation 'com.bitvale:lightprogress:1.0.0'
 
+
     // for home header slider loading view
     implementation 'com.opensooq.android:pluto:1.6'
 

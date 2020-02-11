@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.product_listing.ProductListingActivity"
     app:layoutDescription="@xml/collapsing_toolbar"
-    android:fitsSystemWindows="true"
+    android:fitsSystemWindows="false"
     tools:showPaths="true">
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
@@ -38,11 +39,10 @@
             android:id="@+id/toolbar"
             layout="@layout/product_list_toolbar"
             android:layout_width="match_parent"
-            android:fitsSystemWindows="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_height="280dp" />
+            android:layout_height="220dp" />
 
 
 

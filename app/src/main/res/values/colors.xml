@@ -7,10 +7,10 @@
     <color name="colorPink">#F85757</color>
     <color name="colorBlue">#00BCD4</color>
     <color name="colorGray">#919494</color>
-    <color name="colorYellow">#81FFEB3B</color>
+    <color name="colorYellow">#990A0A0A</color>
     <color name="colorTransparent">#81FFEB3B</color>
     <color name="colorLightGray">#E9E8E8</color>
-
+<!--    81FFEB3B-->
 
 
 </resources>

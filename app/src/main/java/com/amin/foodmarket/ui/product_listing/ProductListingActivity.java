@@ -6,15 +6,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyCharacterMap;
-import android.view.KeyEvent;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,10 +25,11 @@ public class ProductListingActivity extends AppCompatActivity {
     PagerAdapter pagerAdapter;
     TextView titleTV;
     ImageView categoryIV;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_product_listing);
 
         // getting category data from intent and pass to view model
@@ -54,13 +47,6 @@ public class ProductListingActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabs);
         viewPager = findViewById(R.id.viewpager);
 
-        //    for using status bar
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-
         // pass fragments to view pager
         pagerAdapter = new PagerAdapter
                 (getSupportFragmentManager());
@@ -69,21 +55,23 @@ public class ProductListingActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        // getting category data from view model
-        productListingViewModel.marketMutableLiveData.observe(this, new Observer<Category>() {
-            @Override
-            public void onChanged(Category category) {
+        if (category!=null) {
+            // getting category data from view model
+            productListingViewModel.marketMutableLiveData.observe(this, new Observer<Category>() {
+                @Override
+                public void onChanged(Category category) {
 
-                // toolbar views
-                Picasso.get().load(category.getCategoryImg())
-                        .into(categoryIV);
-                titleTV.setText(category.getName());
-                categoryIV.setColorFilter(getResources().getColor(R.color.colorTransparent));
+                    // toolbar views
+                    Picasso.get().load(category.getCategoryImg())
+                            .into(categoryIV);
+                    titleTV.setText(category.getName());
 
-            }
-        });
+                }
+            });
 
-        productListingViewModel.getMarketData();
+            productListingViewModel.getMarketData();
+
+        }
 
 
     }
