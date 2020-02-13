@@ -20,7 +20,6 @@
         <item name="colorPrimary">@android:color/transparent</item>
         <item name="colorPrimaryDark">@android:color/transparent</item>
         <item name="colorAccent">@color/colorAccent</item>
-
     </style>
 
     <style name="TranslucentStatusBar" parent="Theme.AppCompat.Light.NoActionBar">
@@ -32,6 +31,10 @@
         <item name="android:windowDrawsSystemBarBackgrounds">false</item>
     </style>
 
-
+    <style name="CustomTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">#00000000</item>
+    </style>
 
 </resources>
