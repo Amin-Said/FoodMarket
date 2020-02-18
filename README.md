@@ -1,2 +1,2 @@
 # FoodMarket
-Use in this project: MVVVM - Databinding - Retrofit 
+Use in this project: MVVM - Databinding - Retrofit 
